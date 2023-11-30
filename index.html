@@ -11,9 +11,109 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hello BD</h1>
+    <div class="menu-bar">
+      <nav class="navbar ps-5 pe-5 mt-5">
+        <div class="container-fluid pb-3">
+          <img src="images/Logo.png" alt="" />
+          <button
+            style="
+              font-weight: 500;
+              color: #252525;
+              background-color: #25252533;
+            "
+            class="btn ps-4 pe-4 pt-2 pb-2"
+            type="submit"
+          >
+            Sort by view
+          </button>
+          <button
+            style="background-color: #ff1f3d"
+            class="btn ps-4 pe-4 pt-2 pb-2"
+            type="submit"
+          >
+            <a
+              style="text-decoration: none; color: #ffffff; font-weight: 500"
+              href="blog.html"
+              target="_blank"
+              >Blog</a
+            >
+          </button>
+        </div>
+        <hr
+          style="border: 1px rgba(23.38, 23.28, 23.28, 0.2) solid"
+          class="w-100"
+        />
+      </nav>
+    </div>
+
+    <div class="search-box">
+      <input
+        id="search-text"
+        class="search-input"
+        type="text"
+        placeholder="Type Your Food Name..."
+      />
+      <button onclick="loadData()" id="search-btn">Search</button>
+      <!-- <button onclick="loadData()">LoadData</button> -->
+    </div>
+
+    <!-- Meals-container area -->
+    <h1 class="text-center">
+      Total Meals: <span id="total-meals" class="text-danger"> </span>
+    </h1>
+    <div id="meals-container"></div>
+
+    <!-- modal section -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div id="modal-container">
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Modal title
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ------------------------------------------------------------------------------- -->
     <!-- JS link -->

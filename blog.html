@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      background-image: url(images/bg.jpg);
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    "
+  >
+    <div class="accordion-container container pt-5 w-50 mt-5">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button text-dark fw-medium fs-3 bg-body-secondary border-black"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Discuss the scope of var, let, and const
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body bg-dark text-white">
+              <h4><code>VAR:</code></h4>
+              <ul>
+                <li>
+                  <p>
+                    <span class="text-info">Function Scope:</span> Variables
+                    declared with var are function-scoped. They are only
+                    accessible within the function where they are defined.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="text-info">Hoisting:</span> Variables declared
+                    with var are hoisted to the top of their containing function
+                    or global scope, meaning you can use them before they are
+                    declared, but they will be initialized with undefined until
+                    their actual declaration.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="accordion-body bg-dark text-white">
+              <h4><code>LET:</code></h4>
+              <ul>
+                <li>
+                  <p>
+                    <span class="text-info">Block Scope</span> Variables
+                    declared with let are block-scoped, meaning they are
+                    accessible only within the block where they are defined. A
+                    block can be a function, loop, or any enclosed in curly
+                    braces{}.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="text-info">Hoisting:</span> Variables declared
+                    with let are also hoisted to the top of their containing
+                    block, but they are not initialized, so you can't use them
+                    before their declaration.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="accordion-body bg-dark text-white">
+              <h4><code>CONST:</code></h4>
+              <ul>
+                <li>
+                  <p>
+                    <span class="text-info">Block Scope:</span> Like let, const
+                    is also block-scoped.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="text-info">Immutability:</span> Variables
+                    declared with const are meant to be constants, and their
+                    value cannot be reassigned after initialization. However,
+                    for objects and arrays declared with const, you can still
+                    modify their properties or elements; you just can't reassign
+                    the variable itself.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed text-dark fw-medium fs-3 bg-body-secondary border-black"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Tell us the use cases of null and undefined
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body bg-dark text-white">
+              <h4><code>NULL:</code></h4>
+              <ul>
+                <li>
+                  <p>
+                    In JavaScript, null is a special value that represents an
+                    empty or unknown value.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Usually, null is used to assign 'unknown' or 'empty' value
+                    to a variable. Hence, you can assign null to a variable.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="accordion-body bg-dark text-white">
+              <h4><code>UNDEFINED:</code></h4>
+              <ul>
+                <li>
+                  <p>
+                    If a variable is declared but the value is not assigned,
+                    then the value of that variable will be undefined.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    It is also possible to explicitly assign undefined to a
+                    variable.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed text-dark fw-medium fs-3 bg-body-secondary border-black"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              What do you mean by REST API?
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body bg-dark text-white">
+              <h4><code>REST API:</code></h4>
+              <ul>
+                <li>
+                  <p>
+                    An API, or application programming interface, is a set of
+                    rules that define how applications or devices can connect to
+                    and communicate with each other. A REST API is an API that
+                    conforms to the design principles of the REST, or
+                    representational state transfer architectural style. For
+                    this reason, REST APIs are sometimes referred to RESTful
+                    APIs.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3">
+      <button
+        style="font-family: Inter, sans-serif"
+        class="btn btn-dark fw-bold fs-5"
+      >
+        <a style="text-decoration: none; color: #ffffff; font-weight: 500" href="index.html">Back to home</a>
+      </button>
+    </div>
+    <!-- ----------------------------------------------------------------------------- -->
+    <!-- Bootstrap JS CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
