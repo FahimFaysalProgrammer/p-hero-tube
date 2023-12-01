@@ -43,6 +43,8 @@ const displayData = (data) => {
       card.classList.add("item-card");
       card.innerHTML = `
             <img class="box-img rounded p-0" src=${item?.thumbnail} alt="">
+            <div class="time-container">
+            </div>
             <div class="d-flex gap-3 text-start p-3 align-items-center">
                 <img class="w-25 h-25 rounded-circle" src=${item?.authors[0].profile_picture} alt="">
                 <div class="pt-3">
@@ -61,6 +63,4 @@ const displayData = (data) => {
   document.getElementById("items-container").value = "";
 };
 
-// loadAllData();
-
-// loadData("a");
+loadAllData();
