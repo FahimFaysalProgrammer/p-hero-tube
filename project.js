@@ -1,60 +1,66 @@
-const loadData = (global) => {
-    // console.log("Hello world!");
-    const searchText = document.getElementById("search-text").value;
-    //   console.log(searchText);
-    fetch(
-      `https://www.themealdb.com/api/json/v1/1/search.php?f=${
-        searchText ? searchText : global
-      }`
-    )
-      .then((res) => res.json())
-      // .then(data => console.log(data.meals))
-      .then((data) => displayData(data.meals));
-  };
-  
-  const displayData = (data) => {
-    // console.log(data);
-    document.getElementById("total-meals").innerText = data.length;
-  
-    const mealsContainer = document.getElementById("meals-container");
-  
-    data.forEach((meal) => {
-      // console.log(meal);
+const loadAllData = () => {
+  fetch("https://openapi.programming-hero.com/api/videos/category/1000")
+    .then((res) => res.json())
+    //  .then(data => console.log(data.data))
+    .then((data) => displayData(data.data));
+};
+const loadMusicData = () => {
+  fetch("https://openapi.programming-hero.com/api/videos/category/1001")
+    .then((res) => res.json())
+    //  .then(data => console.log(data.data))
+    .then((data) => displayData(data.data));
+};
+const loadComedyData = () => {
+  fetch("https://openapi.programming-hero.com/api/videos/category/1003")
+    .then((res) => res.json())
+    //  .then(data => console.log(data.data))
+    .then((data) => displayData(data.data));
+};
+const loadDrawingData = () => {
+  fetch("https://openapi.programming-hero.com/api/videos/category/1005}")
+    .then((res) => res.json())
+    //  .then(data => console.log(data.data))
+    .then((data) => displayData(data.data));
+};
+
+const displayData = (data) => {
+  // console.log(data);
+  if (data.length == 0) {
+    // console.log("Oops!! Sorry, There is no content here");
+    const boxArea = (document.getElementById("items-container").innerHTML = `
+    <div class="text-center">
+    <img class="p-4" src="images/Icon.png" alt="">
+    <h1 class="text-center fw-bold">Oops!! Sorry, There is no <br> content here</h1>
+    </div>
+    
+    `);
+  } else {
+    const itemsContainer = document.getElementById("items-container");
+
+    data.forEach((item) => {
+      console.log(item);
       const card = document.createElement("div");
-      card.classList.add("meals-card");
+      card.classList.add("item-card");
       card.innerHTML = `
-          <img class="box-img" src=${meal?.strMealThumb} alt="">
-          <h4>${meal?.strMeal}</h4>
-          <p>${meal.strInstructions.slice(0, 72)}</p>
-          <button
-              onclick="displayModal('${meal.idMeal}')"
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              >
-              Details
-          </button>
-          `;
-      mealsContainer.appendChild(card);
+            <img class="box-img rounded p-0" src=${item?.thumbnail} alt="">
+            <div class="d-flex gap-3 text-start p-3 align-items-center">
+                <img class="w-25 h-25 rounded-circle" src=${item?.authors[0].profile_picture} alt="">
+                <div class="pt-3">
+                  <h4 class="fw-bold m-0">${item?.title}</h4>
+                  <div class="text-start">
+                  <p class="m-0">${item.authors[0].profile_name}</p>
+                  <p class="m-0">${item.others.views} views</p>
+                </div>
+              </div>
+            </div>
+            
+            `;
+      itemsContainer.appendChild(card);
     });
-  };
-  
-  const displayModal = async (id) => {
-    //   console.log("hello world");
-    //   console.log(id);
-    try {
-      const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-      );
-      const data = await response.json();
-      console.log(data.meals[0]);
-    } catch {
-      (err) => {
-        console.log(err);
-      };
-    }
-  };
-  
-  loadData("a");
-  
+  }
+  document.getElementById("items-container").value = "";
+};
+
+// loadAllData();
+
+// loadData("a");
